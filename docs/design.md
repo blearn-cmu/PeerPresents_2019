@@ -22,6 +22,9 @@ benefits of in-class peer feedback systems.
 * Support stakeholder goals
 * Scale horizontally to support user growth
   * I.e. microservice architecture
+* Target platforms
+  * (Server): Flexible deployment (compatible with cloud platforms and on-premise machines)
+  * (App): Desktop and mobile web-browsers
 
 #### Stakeholder Goals
 * Students Presenting

@@ -17,6 +17,13 @@ benefits of in-class peer feedback systems.
 
 ### Goals and Non-Goals
 [Describe user-driven impact of project. Specify how to measure success using metrics.]
+
+#### Overall Goals
+* Support stakeholder goals
+* Scale horizontally to support user growth
+  * I.e. microservice architecture
+
+#### Stakeholder Goals
 * Students Presenting
   * Share content with entire team
   * Write questions to influence feedback they get
@@ -30,7 +37,7 @@ benefits of in-class peer feedback systems.
   * View other students’ feedback
   * Reaction to other students’ feedback (vote/emoji/etc)
   * No threaded discussion
-* Course Staff
+* Course Staff / Instructors
   * How many students are online
   * How many students are active (watching, commenting, reacting)
   * Quality check on feedback students are giving
@@ -45,17 +52,17 @@ benefits of in-class peer feedback systems.
   * Turn features on/off for particular groups of students
     * A/B Testing
 
-### Milestones
-[ List of measurable checkpoints. Minimum-viable product (MVP) deliverables.]
+### Proposed Solution
+[Technical architecture. User stories and diagrams to describe user interaction and data flow.]
 
 ### Existing Solution
 [User stories to describe user interaction and data flow.]
 
-### Proposed Solution
-[Technical architecture. User stories and diagrams to describe user interaction and data flow.]
-
 ### Alternative Solutions
 [Pros and Cons of other considered solutions.]
+
+### Milestones
+[ List of measurable checkpoints. Minimum-viable product (MVP) deliverables.]
 
 ### Testability, Monitoring, and Alerting
 [Describe how the system will be tested and monitored.]

@@ -5,20 +5,24 @@ A Web-Based System for In-Class Peer Feedback during Student Presentations
 ### Overview
 [Engineering overview. Define components and how they interact. Needs reconstructed from twerp repo information.]
 
+
+
 ### Context
+
 Peer feedback systems enable students to get feedback without substantially burdening the instructor. However, current systems typically ask students to provide feedback after class; this introduces challenges for ensuring relevant, timely, diverse, and sufficient amounts of feedback, and reduces the time available for student reflection. PeerPresents is a novel system for in-class peer review where students can quickly exchange feedback on projects without being burdened by additional work outside of class. We found students can receive immediate, copious, and diverse peer feedback through a structured in-class activity. Students also described the feedback they received as helpful and reported that they gave more feedback than without using the system. These early results demonstrate the potential
 benefits of in-class peer feedback systems.
 
 ### Stakeholders
+
 * Students presenting their work
 * Students giving feedback to peers
 * Course Staff or Instructors
 * Researchers using data
 
-### Goals and Non-Goals
-[Describe user-driven impact of project. Specify how to measure success using metrics.]
+### Goals
 
 #### Overall Goals
+
 * Support stakeholder goals
 * Scale horizontally to support user growth
   * I.e. microservice architecture
@@ -27,6 +31,7 @@ benefits of in-class peer feedback systems.
   * (App): Desktop and mobile web-browsers
 
 #### Stakeholder Goals
+
 * Students Presenting
   * Share content with entire team
   * Write questions to influence feedback they get
@@ -56,9 +61,9 @@ benefits of in-class peer feedback systems.
     * A/B Testing
 
 ### Proposed Solution
-[Technical architecture. User stories and diagrams to describe user interaction and data flow.]
 
 **Componets:**
+
 * Frontend (User Interface)
   * Handles all user interactions
   * Routes requests to appropraite microservice
@@ -67,6 +72,8 @@ benefits of in-class peer feedback systems.
   * Assigns tasks to appropriate Worker Services
 * Storage
   * Handles all database requests
+* Session Store
+  * Persists session state externaly to microservices and main storage
 * Worker Services (dynamically provisioned workers; process light-weight tasks)
   * Identity Service
     * Handles user auth and user management
@@ -82,6 +89,7 @@ benefits of in-class peer feedback systems.
     * Handles accessing data for research interests
 
 **User Stories:**
+
 * Presentation Setup
   * As a Presenter, I can ...
     * create a Presentation
@@ -103,15 +111,17 @@ benefits of in-class peer feedback systems.
     * Sort/Filter Responses by Tags
 
 **Architecture:**
+
 Follows a microservice architecture. The user interacts exclusively through the Frontend. The Frontend sends all requests to the Backend Master (1 or more servers). If using more than 1 Backend Master, a simple load balancer can be used. The Backend Master recieves all incoming Frontend requests and assigns tasks to the appropriate Worker Service. Worker Services process light-weight tasks and can be provisioned on-the-fly by the Backend Master.
 
 
 
 ### Existing Solution
-[User stories to describe user interaction and data flow.]
+
 The [twerp repository](https://github.com/creativecolab/twerp) contains the existing solution for PeerPresents (2017). This solution has the following components and is described through user stories below.
 
 **Componets:**
+
 * Frontend (Client web page)
   * User Interface
   * Javascript App
@@ -123,6 +133,7 @@ The [twerp repository](https://github.com/creativecolab/twerp) contains the exis
   * MySQL database hosted by remote service (Linode)
 
 **User Stories:**
+
 * Presentation Setup
   * As a Presenter, I can ...
     * create a Presentation
@@ -143,10 +154,11 @@ The [twerp repository](https://github.com/creativecolab/twerp) contains the exis
     * Sort/Filter Responses by Tags
 
 **Architecture:**
-Follows a monolithic server architecture. The user interacts exclusively through the Frontend. The Frontend sends all requests to a single Backend server. The Backend server processes all incoming Frontend requests and sends responses back to the Frontend. Frontend requests cause interactions (read/write) with Storage.
 
-### Alternative Solutions
-[Pros and Cons of other considered solutions.]
+Follows a monolithic server architecture. The user interacts exclusively through the Frontend. The Frontend sends all requests to a single Backend server. The Backend server processes all incoming Frontend requests and sends responses back to the Frontend. Frontend requests cause interactions (read/write) with Storage. A Session Store is used to persist session state in the distributed architecture.
+
+### Solution Comparison
+
 Existing solution cons:
 * Slows as number of users increases (need for scalability)
 * Codebase has become disjoint. Leads to difficulty adding new features without introducing bugs.

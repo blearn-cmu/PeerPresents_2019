@@ -58,11 +58,110 @@ benefits of in-class peer feedback systems.
 ### Proposed Solution
 [Technical architecture. User stories and diagrams to describe user interaction and data flow.]
 
+**Componets:**
+* Frontend (User Interface)
+  * Handles all user interactions
+  * Routes requests to appropraite microservice
+* Backend Master (Server)
+  * Handles all requests from Frontend
+  * Assigns tasks to appropriate Worker Services
+* Storage
+  * Handles all database requests
+* Worker Services (dynamically provisioned workers; process light-weight tasks)
+  * Identity Service
+    * Handles user auth and user management
+  * Presenter Service
+    * Handles configuration of Presentations
+  * Live Presentation Service
+    * Handles connections for live presentation sessions
+    * Generates URL for live presentation
+  * Listener Service
+    * Handles all Listener interactions
+      * Respond, Upvote, React
+  * Research Data Service
+    * Handles accessing data for research interests
+
+**User Stories:**
+* Presentation Setup
+  * As a Presenter, I can ...
+    * create a Presentation
+    * submit Questions for my Presentation
+    * view and share a unique URL for my Presentation
+* During Presentation
+  * As a Listener, I can ...
+    * join a Presentation with a provided URL
+    * see all Questions and Responses
+    * submit Responses to Questions
+    * Upvote a Response
+    * React to a Response
+* Reflection / Post-Mortem
+  * As a Presenter, I can ...
+    * view all Responses in my Presentation
+    * view all Response Metadata
+    * Tag a Response
+    * React to a Response
+    * Sort/Filter Responses by Tags
+
+**Architecture:**
+Follows a microservice architecture. The user interacts exclusively through the Frontend. The Frontend sends all requests to the Backend Master (1 or more servers). If using more than 1 Backend Master, a simple load balancer can be used. The Backend Master recieves all incoming Frontend requests and assigns tasks to the appropriate Worker Service. Worker Services process light-weight tasks and can be provisioned on-the-fly by the Backend Master.
+
+
+
 ### Existing Solution
 [User stories to describe user interaction and data flow.]
+The [twerp repository](https://github.com/creativecolab/twerp) contains the existing solution for PeerPresents (2017). This solution has the following components and is described through user stories below.
+
+**Componets:**
+* Frontend (Client web page)
+  * User Interface
+  * Javascript App
+* Backend (Server)
+  * Handles all requests from Frontend
+  * Node.js App
+* Storage
+  * Contains all application and user data
+  * MySQL database hosted by remote service (Linode)
+
+**User Stories:**
+* Presentation Setup
+  * As a Presenter, I can ...
+    * create a Presentation
+    * submit Questions for my Presentation
+    * view and share a unique URL for my Presentation
+* During Presentation
+  * As a Listener, I can ...
+    * join a Presentation with a provided URL
+    * see all Questions and Responses
+    * submit Responses to Questions
+    * Vote on a Response
+    * Emoji react to a Response
+* Reflection / Post-Mortem
+  * As a Presenter, I can ...
+    * view all Responses in my Presentation
+    * view all Response Metadata
+    * Tag a Reponse
+    * Sort/Filter Responses by Tags
+
+**Architecture:**
+Follows a monolithic server architecture. The user interacts exclusively through the Frontend. The Frontend sends all requests to a single Backend server. The Backend server processes all incoming Frontend requests and sends responses back to the Frontend. Frontend requests cause interactions (read/write) with Storage.
 
 ### Alternative Solutions
 [Pros and Cons of other considered solutions.]
+Existing solution cons:
+* Slows as number of users increases (need for scalability)
+* Codebase has become disjoint. Leads to difficulty adding new features without introducing bugs.
+
+Existing solution pros:
+* Could be deployed quickly
+* Works in small-scale scenarios
+* Fulfills most design requirements
+
+Proposed solution cons:
+* Requires engineering effort to complete
+* The microservice architecture (provides scalablity) is more complex than the existing solution
+
+Proposed solution pros:
+* Scales horizontally (add more instances to handle more users)
 
 ### Milestones
 [ List of measurable checkpoints. Minimum-viable product (MVP) deliverables.]

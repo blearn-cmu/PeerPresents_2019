@@ -160,7 +160,7 @@ Milestones
 
 We need something show-able in the Fall (even if it’s an alpha version) but we need to know when this will be ready by August 1st.
 
-Milestone \#1- Project Planning
+Milestone \#1 - Project Planning
 -------------------------------
 
 Target date: Nov. 25, 2019

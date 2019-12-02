@@ -77,12 +77,15 @@ Follows a microservice architecture. The user interacts exclusively through the 
 ### Testability, Monitoring, and Alerting
 
 **Unit Tests**
+
 Unit tests will be written for all components continuously during development. A component must pass all unit tests before being accepted into the master branch.
 
 **Functional Tests**
+
 Functional tests will be written for all components continuously during development. A component must pass all functional tests before being accepted into the master branch.
 
 **Monitoring**
+
 Any system/component actively running on non-development resources must be monitored with periodic health checks. The monitoring results must be stored in an aduitable format in a secure location. 
 
 ### Open Questions

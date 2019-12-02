@@ -2,15 +2,15 @@
 A Web-Based System for In-Class Peer Feedback during Student Presentations
 
 
-### Overview
-[Engineering overview. Define components and how they interact. Needs reconstructed from twerp repo information.]
-
-
-
 ### Context
 
 Peer feedback systems enable students to get feedback without substantially burdening the instructor. However, current systems typically ask students to provide feedback after class; this introduces challenges for ensuring relevant, timely, diverse, and sufficient amounts of feedback, and reduces the time available for student reflection. PeerPresents is a novel system for in-class peer review where students can quickly exchange feedback on projects without being burdened by additional work outside of class. We found students can receive immediate, copious, and diverse peer feedback through a structured in-class activity. Students also described the feedback they received as helpful and reported that they gave more feedback than without using the system. These early results demonstrate the potential
 benefits of in-class peer feedback systems.
+
+
+### Overview
+[Engineering overview. Define components and how they interact. Needs reconstructed from twerp repo information.]
+
 
 ### Stakeholders
 
@@ -18,6 +18,7 @@ benefits of in-class peer feedback systems.
 * Students giving feedback to peers
 * Course Staff or Instructors
 * Researchers using data
+
 
 ### Goals
 

@@ -9,7 +9,7 @@ benefits of in-class peer feedback systems.
 
 
 ### Overview
-[Engineering overview. Define components and how they interact. Needs reconstructed from twerp repo information.]
+![architecture overview](res/architecture_overview.png)
 
 
 ### Stakeholders

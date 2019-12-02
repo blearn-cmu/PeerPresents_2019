@@ -62,7 +62,7 @@ benefits of in-class peer feedback systems.
 
 ### Proposed Solution
 
-**Componets:**
+**Components:**
 
 * Frontend (User Interface)
   * Handles all user interactions
@@ -120,7 +120,7 @@ Follows a microservice architecture. The user interacts exclusively through the 
 
 The [twerp repository](https://github.com/creativecolab/twerp) contains the existing solution for PeerPresents (2017). This solution has the following components and is described through user stories below.
 
-**Componets:**
+**Components:**
 
 * Frontend (Client web page)
   * User Interface
@@ -176,13 +176,21 @@ Proposed solution pros:
 * Scales horizontally (add more instances to handle more users)
 
 ### Milestones
-[ List of measurable checkpoints. Minimum-viable product (MVP) deliverables.]
+See the Project Plan document for milestones.
 
 ### Testability, Monitoring, and Alerting
-[Describe how the system will be tested and monitored.]
+
+**Unit Tests**
+Unit tests will be written for all components continuously during development. A component must pass all unit tests before being accepted into the master branch.
+
+**Functional Tests**
+Functional tests will be written for all components continuously during development. A component must pass all functional tests before being accepted into the master branch.
+
+**Monitoring**
+Any system/component actively running on non-development resources must be monitored with periodic health checks. The monitoring results must be stored in an aduitable format in a secure location. 
 
 ### Open Questions
-[Describe any unknowns.]
+
 
 
 

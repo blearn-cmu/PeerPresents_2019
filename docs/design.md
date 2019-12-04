@@ -61,17 +61,19 @@ Follows a microservice architecture. The user interacts exclusively through the 
 * Session Store
   * Persists session state externaly to microservices and main storage
 * Worker Services (dynamically provisioned workers; process light-weight tasks)
-  * Identity Service
+  * Identity Manager
     * Handles user auth and user management
-  * Presenter Service
+  * Presentation Manager
     * Handles configuration of Presentations
+  * Study Manager
+    * Handles configuration of study design
   * Live Presentation Service
     * Handles connections for live presentation sessions
     * Generates URL for live presentation
-  * Listener Service
-    * Handles all Listener interactions
+  * Audience Manager
+    * Handles all audience interactions
       * Respond, Upvote, React
-  * Research Data Service
+  * Research Explorer
     * Handles accessing data for research interests
 
 ### Testability, Monitoring, and Alerting

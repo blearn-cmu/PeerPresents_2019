@@ -76,6 +76,10 @@ Follows a microservice architecture. The user interacts exclusively through the 
   * Research Explorer
     * Handles accessing data for research interests
 
+**Implementation**
+
+PeerPresents is a Node.js application. The Koa framework is used for the backend components and API consumption. The frontend uses the React framework to build declaritive UIs and the Bootstrap framework for dynamic css/layouts.
+
 ### Testability, Monitoring, and Alerting
 
 **Unit Tests**

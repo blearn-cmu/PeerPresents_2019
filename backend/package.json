@@ -1,0 +1,40 @@
+{
+  "name": "PeerPresents",
+  "version": "0.1.0",
+  "description": "A Web-Based System for In-Class Peer Feedback during Student Presentations",
+  "author": {
+    "name": "Bryan Learn",
+    "email": "blearn@andrew.cmu.edu"
+  },
+  "license": "MIT",
+  "repository": "git://github.com/blearn-cmu/PeerPresents_2019.git",
+  "directories": {
+    "lib": "./app/controllers",
+    "test": "./test"
+  },
+  "dependencies": {
+    "config": ">=3.1.0",
+    "debug": ">=4.1.1",
+    "@hapi/joi": ">=17.0.2",
+    "koa": ">=2.7.0",
+    "koa-body": ">=4.1.0",
+    "koa-router": ">=7.4.0",
+    "koa-static": ">=5.0.0",
+    "optimist": ">=0.6.1",
+    "prom-client": ">=11.3.0",
+    "prometheus-gc-stats": ">=0.6.1",
+    "to-time": "git://github.com/ApelSYN/to-time.git"
+  },
+  "devDependencies": {
+    "frisby": "^0.8.5",
+    "get-port": "^3.0.0",
+    "jasmine-node": "*"
+  },
+  "scripts": {
+    "start": "node --harmony index.js",
+    "test": "node --harmony ./node_modules/jasmine-node/lib/jasmine-node/cli.js spec"
+  },
+  "engines": {
+    "node": ">=7.6.x"
+  }
+}

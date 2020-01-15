@@ -1,6 +1,7 @@
 {
-  "name": "react-frontend",
+  "name": "peerpresents-react-frontend",
   "version": "0.1.0",
+  "repository": "git://github.com/blearn-cmu/PeerPresents_2019.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

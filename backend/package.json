@@ -1,13 +1,14 @@
 {
-  "name": "PeerPresents",
+  "name": "peerpresents-backend",
   "version": "0.1.0",
-  "description": "A Web-Based System for In-Class Peer Feedback during Student Presentations",
+  "description": "Backend component for PeerPresents",
   "author": {
     "name": "Bryan Learn",
     "email": "blearn@andrew.cmu.edu"
   },
   "license": "MIT",
   "repository": "git://github.com/blearn-cmu/PeerPresents_2019.git",
+  "private": true,
   "directories": {
     "lib": "./app/controllers",
     "test": "./test"
@@ -21,6 +22,7 @@
     "koa-router": ">=7.4.0",
     "koa-static": ">=5.0.0",
     "koa2-cors": "^2.0.6",
+    "mongodb": "^3.5.0",
     "optimist": ">=0.6.1",
     "prom-client": ">=11.3.0",
     "prometheus-gc-stats": ">=0.6.1",

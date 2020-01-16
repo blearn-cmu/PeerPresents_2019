@@ -1,14 +1,10 @@
 const Router = require('koa-router'),
       KoaBody = require('koa-body'),
-      {index, getId, list, createItem, updateItem, removeItem} = require('../controllers/indexController');
+      {handle_work_request} = require('../controllers/indexController');
 
 const router = new Router();
 
-router.get('/model',		list)
-router.get('/model/:id',	getId)
-router.post('/model/',		KoaBody(), createItem)
-router.put('/model/:id',	KoaBody(), updateItem)
-router.delete('/model/:id',	removeItem)
+router.post('work_request', handle_work_request)
 
 module.exports = {
     routes () { return router.routes() },

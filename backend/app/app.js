@@ -1,12 +1,14 @@
 const http = require('http'),
       serve = require('koa-static'),
       Koa = require('koa'),
+      koaBody = require('koa-body'),
       cors = require('koa2-cors'),
       config = require('config'),
       err = require('./helpers/error'),
       {routes, allowedMethods} = require('./routes')
       app = new Koa();
 
+app.use(koaBody());
 app.use(cors());
 app.use(err);
 app.use(serve('./public'));

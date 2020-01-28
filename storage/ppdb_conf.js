@@ -1,6 +1,6 @@
 module.exports = {
     mongo: {
-        ip: 127.0.0.1,
+        ip: "localhost",
         port: 27017,
         name: "test_db"
     }

@@ -1,71 +1,26 @@
 "use strict";
 
-const db_conf = require('../ppdb_conf.json')
+const db_conf = require('../../ppdb_conf.js')
 const MongoClient = require('mongodb').MongoClient;
-const url = `mongodb://${db_conf.ip}/${db_conf.name}`;
+const url = `mongodb://${db_conf.mongo.ip}:${db_conf.mongo.port}/${db_conf.mongo.name}`;
+//const url = "mongodb://"+db_conf.ip+":"+db_conf.port+"/"+db_conf.name;
 
+console.log(url);
+
+function createDB(){
+    console.log(url);
+    console.log(db_conf);
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db(db_conf.name);
+        dbo.createCollection("init", function(err, res){
+            if (err) throw err;
+            console.log(`Created database: ${db_conf.mongo.name}`);
+            db.close();
+        });
+    });
+}
 
 module.exports = {
-
-    /**
-     * Get all records from memory DB
-     * @return {Promise}
-     */
-    getAll: function getAllFromDb(ent) {
-        return new Promise((resolve, reject) => {
-            /* TODO */
-            MongoClient.connect(url, function(err, db){
-                var cursor = db.collection(ent).find();
-                
-                cursor.each(function(err, item){
-                    // do stuff on item
-                });
-            });
-        });
-    },
-
-    /**
-     * Get record by id from memory DB
-     * @param id
-     * @return {Promise}
-     */
-    getById: function getIdFromDb(ent, id) {
-        return new Promise((resolve, reject) => {
-            /* TODO */
-
-        });
-    },
-
-    /**
-     * Add new record to memory DB
-     * @param name
-     * @return {Promise}
-     */
-    setNewId: function setNewIdToDb(ent, name) {
-        let length = db.length;
-        db.push({id: length, name: name});
-        return module.exports.getById(length);
-    },
-
-    /**
-     * Update record into memory DB
-     * @param id
-     * @param name
-     * @return {Promise}
-     */
-    updateId: function updateIdToDb(ent, id, name) {
-        db[parseInt(id)] = {id: parseInt(id), name: name};
-        return module.exports.getById(id);
-    },
-
-    /**
-     * Remove record from memory DB
-     * @param id
-     * @return {Promise}
-     */
-    removeId: function removeIdInDb(ent, id) {
-        return new Promise((resolve, reject) => {
-            /* TODO */
-        });
-    }
+    createDB
 };

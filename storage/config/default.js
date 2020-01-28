@@ -5,6 +5,6 @@ module.exports = {
         version: package.version
     },
     server: {
-        port: 3003
+        port: 3030
     }
 };

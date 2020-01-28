@@ -1,0 +1,29 @@
+{
+  "name": "worker_service",
+  "version": "1.0.0",
+  "description": "Worker Service component for PeerPresents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blearn-cmu/PeerPresents_2019.git"
+  },
+  "author": "Bryan Learn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blearn-cmu/PeerPresents_2019/issues"
+  },
+  "homepage": "https://github.com/blearn-cmu/PeerPresents_2019#readme",
+  "dependencies": {
+    "config": ">=3.1.0",
+    "debug": ">=4.1.1",
+    "koa": ">=2.7.0",
+    "koa-body": ">=4.1.0",
+    "koa-router": ">=7.4.0",
+    "koa-static": ">=5.0.0",
+    "koa2-cors": "^2.0.6",
+    "mongodb": "^3.5.0"
+  }
+}

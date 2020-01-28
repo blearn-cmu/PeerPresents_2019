@@ -1,27 +1,36 @@
 const Router = require('koa-router'),
       KoaBody = require('koa-body'),
-      {
-       // Identity API
-       login, logout, 
-       createUser, readUser, updateUser, deleteUser,
 
-       // Presentation API
-       createQuestion, deleteQuestion, 
-       createCourse, deleteCourse, 
-       createSession, deleteSession, 
-       createPresentation, deletePresentation,
- 
-       // Live API
-       createLiveSession, deleteLiveSession,
-       joinLiveSession,
- 
-       // Audience API
-       createUpvote, deleteUpvote,
-       createReact, deleteReact,
-       createStar, deleteStar,
-       createTag, deleteTag,
-       createResponse
-      } = require('../managers/workerManager');
+      // Identity API
+      { login, logout, 
+        createUser, readUser, updateUser, deleteUser
+      } = require('../managers/identityManager');
+
+      // Presentation API
+      { createQuestion, deleteQuestion, 
+        createCourse, deleteCourse, 
+        createSession, deleteSession, 
+        createPresentation, deletePresentation
+      } = require('../managers/presentationManager');
+
+      // Live API
+      { createLiveSession, deleteLiveSession,
+        joinLiveSession
+      } = require('../managers/liveManager');
+
+      // Audience API
+      { createUpvote, deleteUpvote,
+        createReact, deleteReact,
+        createStar, deleteStar,
+        createTag, deleteTag,
+        createResponse
+      } = require('../managers/audienceManager');
+
+      // Study API
+      {} = require('../managers/studyManager'); // beta requirement
+
+      // Research API
+      {} = require('../managers/researchManager'); // beta requirement
 
 const router = new Router();
 
